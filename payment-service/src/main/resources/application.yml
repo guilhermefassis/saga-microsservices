@@ -1,2 +1,29 @@
 server:
   port: 8091
+
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_BROKER:localhost:9092}
+    topic:
+      orchestrator: orchestrator
+      payment-success: payment-success
+      payment-fail: payment-fail
+    consumer:
+      group-id: payment-group
+      auto-offset-reset: latest
+  datasource:
+    url: jdbc:oracle:thin:@${DB_HOST:localhost}:${DB_PORT:1522}/${DB_NAME:XEPDB1}
+    username: ${DB_USER:root}
+    password:  ${DB_PASSWORD:root}
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle12cDialect
+logging:
+  level:
+    org:
+      apache:
+        kafka: OFF

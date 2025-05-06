@@ -18,7 +18,7 @@
 - **Payment Service**: Processa pagamentos (OracleDB)
 - **Inventory Service**: Verifica e reserva estoque (OracleDB)
 - **Orchestrator Service**: Controla o fluxo SAGA entre os serviços
-- **Notification Service**: Envia confirmações (Kafka consumer)
+- **Product Validation Service**: Valida os produtos (OracleDB)
 
 **Bancos de Dados**:
 
@@ -72,10 +72,9 @@
 - Verifica e reserva produtos
 - Usa transações locais e confirma via orquestração
 
-##### Notification Service
+##### Product Validation Service
 
 - Kafka Consumer para eventos de sucesso ou falha
-- Simula envio de email/SMS
 
 #### 4. Testes
 
@@ -122,9 +121,9 @@
 
 ### 🌐 Diagrama da Arquitetura
 
-<p align="center">
-  <h3>Microsservices Architecture</h3>
+
+  <h3>Microservices Architecture</h3>
   <img src="images/microsservices.png" alt="Arquitetura" width="600"/>
-</p>
+
 
 ---

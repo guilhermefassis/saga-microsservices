@@ -6,7 +6,13 @@ plugins {
 
 group = 'br.com.microservices.orchestrated'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
 
 configurations {
 	compileOnly {
