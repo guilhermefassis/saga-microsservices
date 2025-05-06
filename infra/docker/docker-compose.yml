@@ -90,7 +90,7 @@ services:
       - orchestrator-saga
 
   order-service:
-    build: '/order-service'
+    build: '../../order-service'
     container_name: order-service
     depends_on:
       - kafka
@@ -104,7 +104,7 @@ services:
       - "3000:3000"
 
   orchestrator-service:
-    build: '/orchestrator-service'
+    build: '../../orchestrator-service'
     container_name: orchestrator-service
     depends_on:
       - kafka
@@ -116,7 +116,7 @@ services:
       - "8080:8080"
 
   product-validation-service:
-    build: '/product-validation-service'
+    build: '../../product-validation-service'
     container_name: product-validation-service
     depends_on:
       - kafka
@@ -134,7 +134,7 @@ services:
       - "8090:8090"
 
   payment-service:
-    build: '/payment-service'
+    build: '../../payment-service'
     container_name: payment-service
     depends_on:
       - kafka
@@ -152,7 +152,7 @@ services:
       - "8091:8091"
 
   inventory-service:
-    build: '/inventory-service'
+    build: '../../inventory-service'
     container_name: inventory-service
     depends_on:
       - kafka

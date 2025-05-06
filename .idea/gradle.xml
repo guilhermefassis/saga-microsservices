@@ -4,6 +4,16 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="IDE">
+            <builds>
+              <build path="$PROJECT_DIR$/orchestrator-service" name="orchestrator-service" />
+              <build path="$PROJECT_DIR$/order-service" name="order-service" />
+              <build path="$PROJECT_DIR$/payment-service" name="payment-service" />
+              <build path="$PROJECT_DIR$/product-validation-service" name="product-validation-service" />
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$/inventory-service" />
         <option name="gradleJvm" value="corretto-17" />
         <option name="modules">
