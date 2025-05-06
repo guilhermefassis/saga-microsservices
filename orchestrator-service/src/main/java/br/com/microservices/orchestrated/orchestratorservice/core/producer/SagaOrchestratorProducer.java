@@ -1,10 +1,7 @@
-package br.com.microservices.orchestrated.orchestratorservice.core.saga;
+package br.com.microservices.orchestrated.orchestratorservice.core.producer;
 
-import br.com.microservices.orchestrated.orchestratorservice.core.enums.ETopics;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
