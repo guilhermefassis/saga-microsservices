@@ -99,7 +99,7 @@ services:
       - orchestrator-saga
     environment:
       - KAFKA_BROKER=kafka:29092
-      - MONGO_DB_URI=mongodb://admin:admin@order-db:27017
+      - MONGO_DB_URI=mongodb://admin:123456@order-db:27017/order-db?authSource=admin
     ports:
       - "3000:3000"
 
