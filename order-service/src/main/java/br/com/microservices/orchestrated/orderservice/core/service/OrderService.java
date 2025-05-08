@@ -32,8 +32,7 @@ public class OrderService {
                 .transactionId(
                         String.format(TRANSACTION_ID_PATTERN, Instant.now()
                                 .toEpochMilli(),
-                                UUID.randomUUID()
-                                .toString())
+                                UUID.randomUUID())
                 )
                 .build();
 
@@ -51,7 +50,6 @@ public class OrderService {
                 .createdAt(LocalDateTime.now())
                 .build();
 
-        eventService.save(event);
-        return event;
+        return eventService.save(event);
     }
 }
