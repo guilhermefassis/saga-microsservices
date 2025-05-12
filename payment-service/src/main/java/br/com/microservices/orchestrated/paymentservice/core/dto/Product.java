@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Product {
     private String code;
-    private double unitValues;
+    private double unitValue;
 }
