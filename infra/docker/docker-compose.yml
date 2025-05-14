@@ -1,7 +1,6 @@
-version: '3'
+version: "3"
 
 services:
-
   order-db:
     image: mongo:latest
     container_name: order-db
@@ -90,7 +89,7 @@ services:
       - orchestrator-saga
 
   order-service:
-    build: '../../order-service'
+    build: "../../order-service"
     container_name: order-service
     depends_on:
       - kafka
@@ -104,7 +103,7 @@ services:
       - "3000:3000"
 
   orchestrator-service:
-    build: '../../orchestrator-service'
+    build: "../../orchestrator-service"
     container_name: orchestrator-service
     depends_on:
       - kafka
@@ -116,7 +115,7 @@ services:
       - "8080:8080"
 
   product-validation-service:
-    build: '../../product-validation-service'
+    build: "../../product-validation-service"
     container_name: product-validation-service
     depends_on:
       - kafka
@@ -125,16 +124,16 @@ services:
       - orchestrator-saga
     environment:
       - KAFKA_BROKER=kafka:29092
-      - DB_HOST:product-db
-      - DB_PORT:1521
-      - DB_NAME:XEPDB1
-      - DB_USER:root
-      - DB_PASSWORD:root
+      - DB_HOST=product-db
+      - DB_PORT=1521
+      - DB_NAME=XEPDB1
+      - DB_USER=root
+      - DB_PASSWORD=root
     ports:
       - "8090:8090"
 
   payment-service:
-    build: '../../payment-service'
+    build: "../../payment-service"
     container_name: payment-service
     depends_on:
       - kafka
@@ -143,16 +142,16 @@ services:
       - orchestrator-saga
     environment:
       - KAFKA_BROKER=kafka:29092
-      - DB_HOST:payment-db
-      - DB_PORT:1521
-      - DB_NAME:XEPDB1
-      - DB_USER:root
-      - DB_PASSWORD:root
+      - DB_HOST=payment-db
+      - DB_PORT=1521
+      - DB_NAME=XEPDB1
+      - DB_USER=root
+      - DB_PASSWORD=root
     ports:
       - "8091:8091"
 
   inventory-service:
-    build: '../../inventory-service'
+    build: "../../inventory-service"
     container_name: inventory-service
     depends_on:
       - kafka
@@ -161,11 +160,11 @@ services:
       - orchestrator-saga
     environment:
       - KAFKA_BROKER=kafka:29092
-      - DB_HOST:inventory-db
-      - DB_PORT:1521
-      - DB_NAME:XEPDB1
-      - DB_USER:root
-      - DB_PASSWORD:root
+      - DB_HOST=inventory-db
+      - DB_PORT=1521
+      - DB_NAME=XEPDB1
+      - DB_USER=root
+      - DB_PASSWORD=root
     ports:
       - "8092:8092"
 networks:
